@@ -1,0 +1,38 @@
+<script type="text/ng-template" id="group-template.html">
+  <div class="panel-heading">
+    <h4 class="panel-title" style="color:#fa39c3">
+      <a href tabindex="0" class="accordion-toggle" ng-click="" uib-accordion-transclude="heading">
+        <span uib-accordion-header ng-class="{'text-muted': true}">
+          {{heading}}
+        </span>
+      </a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen">
+    <div class="panel-body" style="text-align: right" ng-transclude></div>
+  </div>
+</script>
+
+<h3>Pendente para Recarga</h3>
+
+<h4 ng-if="ctrl.pendings.length == 0">Nenhum usuário pendente</h4>
+
+<uib-accordion close-others="true" >
+  <div uib-accordion-group
+  class="panel-default"
+  heading="{{ customer.id }} - {{ customer.name }}"
+  ng-repeat="customer in ctrl.pendings">
+    {{ customer.operadora }}: {{ customer.celular }}
+    <hr>
+    <ol>
+      <li ng-repeat="topAffiliates in customer.topAffiliates">
+        {{ topAffiliates.id }} - {{ topAffiliates.name }} |  {{ topAffiliates.operadora }}: {{ topAffiliates.celular }}
+      </li>
+    </ol>
+
+    <button type="submit"
+      class="btn btn-default"
+      ng-click="ctrl.confirmRecharge(customer.id)"
+      ><strong>Confirmar Recarregamento</strong></button>
+  </div>
+</uib-accordion>

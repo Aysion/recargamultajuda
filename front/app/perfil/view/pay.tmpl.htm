@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <h3>Dados para efetuar o pagamento, para ativação de sua conta.</h3>
+
+  <dl class="text-color_white">
+    <dt>Agencia:</dt>
+    <dd>3196</dd>
+    <dt>Operação:</dt>
+    <dd>023</dd>
+    <dt>Conta:</dt>
+    <dd>00006906-4</dd>
+    <dt>Adriana Lira Menezes</dt>
+    <dt>Caixa Econômica</dt>
+  </dl>
+
+  <hr>
+
+  <form name="form" ng-if="ctrl.userData.confirmed == 0">
+    <h5>Envie o Comprovante de Pagamento aqui.</h5>
+    <div class="drop-box"
+      name="file"
+      ng-model="ctrl.file"
+      ngf-accept="'image/*, .pdf'"
+      ngf-max-size="30MB"
+      ngf-select
+       ngf-drop
+      ngf-min-height="100"
+      ngf-resize="{width: 200, height: 100}"
+      >
+      <img class="thumb preview" ngf-thumbnail="ctrl.file">
+      <span>Click para selecionar ou arraste o arquivo aqui.</span>
+    </div>
+
+    <hr>
+    <div class="checkbox uib-btn-checkbox">
+      <button type="button"
+      class="btn btn-primary"
+      ng-model="ctrl.opts.whats"
+      uib-btn-checkbox
+      btn-checkbox-true="1"
+      btn-checkbox-false="0">
+        <!-- <input type="checkbox" ng-model="ctrl.opts.whats"> -->
+        Ou também você pode enviar por WhatsApp <br>
+        junto com seu ID<br>
+        <sub ng-if="ctrl.opts.whats == 0">Click no botão caso tenha escolhido essa opção</sub>
+    </div>
+    <p ng-if="ctrl.opts.whats == 1">
+      Nº: <strong>+55 97 984086922</strong><br>
+      ID: <strong>{{ctrl.userData.id}}</strong>
+    </p>
+
+
+    <hr>
+    <button type="submit" ng-click="ctrl.submit()" class="button-upload">Enviar</button>
+
+    <span class="progress" ng-show="ctrl.file.progress >= 0">
+      <div style="width:{{ctrl.file.progress}}%" ng-bind="ctrl.file.progress + '%'"></div>
+    </span>
+
+  </form>
+
+  <h3 ng-if="ctrl.userData.confirmed == 1" class="color__blue">Pagamento confirmado!</h3>
+  <h3 ng-if="ctrl.userData.confirmed == 0 && ctrl.userData.hasReceipt" class="">Aguardando confirmação de pagamento</h3>
+
+
+</div>

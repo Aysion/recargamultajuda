@@ -1,0 +1,117 @@
+/*body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}*/
+/*
+.navbar {
+  margin-bottom: 20px;
+}*/
+
+body {
+  background-image: url("/img/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ddd;
+}
+
+[class*='card'] h2,
+[class*='card'] h4 {
+  color: #444;
+}
+
+.text-color_white {
+  color: #ddd;
+}
+
+.background_white {
+  background-color: #ddd;
+}
+
+.display-initial {
+  display: initial;
+}
+
+.padding-2px {
+  padding: auto 2px auto;
+}
+
+/*
+ * Image Upload
+ */
+
+ .drop-box {
+   background: #F8F8F8;
+   border: 3px dashed #DDD;
+   width: 170px;
+   text-align: center;
+   padding: 10px 10px;
+   margin-left: 10px;
+   cursor: pointer;
+   position: relative;
+ }
+
+ .drop-box.dragover {
+   border-color: blue;
+ }
+
+.drop-box.dragover-err {
+ border: 5px dashed red;
+ }
+
+.thumb {
+  width: 100px;
+}
+
+.drop-box .thumb {
+  position: absolute;
+  width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+ }
+
+.button-upload {
+  display: inline-block;
+  margin: 3px auto;
+}
+
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: orange;
+  width: 0;
+}
+
+
+.ng-v {
+  float: right;
+}
+
+.progress {
+  line-height: 15px;
+}
+
+.preview {
+    clear: both;
+}
+
+.preview img, .preview audio, .preview video {
+    max-width: 300px;
+    max-height: 150px;
+    float: right;
+}
+
+.custom {
+    font-size: 14px;
+    margin-left: 20px;
+}

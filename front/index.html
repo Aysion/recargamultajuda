@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="appRMA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title></title>
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="/lib/ngstorage/ngStorage.min.js"></script>
+
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/lib/GoJS-master/release/go.js"></script>
+  <script src="/lib/ng-file-upload/ng-file-upload-all.min.js"></script>
+  <!-- <script src="/"></script> -->
+</head>
+<body data-ng-controller="AppCtrl as ctrl">
+  <nav id="menu" class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">RMA</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand">
+          RMA
+        </div>
+      </div>
+
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Inicio</a></li>
+        </ul>
+
+        <ul class="btn-group nav navbar-nav navbar-right" ng-hide="ctrl.loginControl.isLogged || ctrl.adminLoginControl.isLogged">
+          <li><a ui-sref="login.logar">Logar</a></li>
+          <li><a ui-sref="login.cadastrar">Cadastrar</a></li>
+        </ul>
+
+        <ul class="btn-group nav navbar-nav navbar-right" ng-show="ctrl.loginControl.isLogged">
+          <li><a ui-sref="perfil.user">Meus dados</a></li>
+          <li><a ui-sref="perfil.afiliados">Meus Afiliados</a></li>
+          <li><a ui-sref="perfil.pay">Pagamento</a></li>
+          <li><a ui-sref="login.logar" data-ng-click="ctrl.loginControl.logout()">Sair</a></li>
+        </ul>
+
+        <ul class="btn-group nav navbar-nav navbar-right" ng-show="ctrl.adminLoginControl.isLogged">
+          <li><a ui-sref="admin.user">Meus dados</a></li>
+          <!-- <li><a ui-sref="admin.listAfiliado">Afiliados</a></li> -->
+          <li><a ui-sref="admin.pending">Pendente para avaliação</a></li>
+          <li><a ui-sref="admin.recharge">Pendente para Recarga</a></li>
+          <li><a ui-sref="login.logar" data-ng-click="ctrl.adminLoginControl.logout()">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ui-view></ui-view>
+
+  <hr>
+  <div id="footer" class="">
+    <div class="well well-sm card">
+      <div class="card-header">
+        <h4 class="card-title">Contato</h4>
+      </div>
+      <div class="card-block">
+      <div class="row">
+        <div class="col-sm-4">
+          <dl>
+            <dt>
+              Zap:
+            </dt>
+            <dd>
+              +55 (97) 9 8408-6922 (claro)
+            </dd>
+            <dd>
+              +55 (97) 9 9174-2878 (vivo)
+            </dd>
+          </dl>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app/app.js"></script>
+  <script src="/app/_providers/http.provider.js"></script>
+  <script src="/app/_services/http.service.js"></script>
+  <script src="/app/_services/login.service.js"></script>
+  <script src="/app/_services/adminLogin.service.js"></script>
+  <script src="/app/home/home.config.js"></script>
+  <script src="/app/home/home.ctrl.js"></script>
+  <script src="/app/login/login.config.js"></script>
+  <script src="/app/login/login.ctrl.js"></script>
+  <script src="/app/login/cadastro.ctrl.js"></script>
+  <script src="/app/login/logar.ctrl.js"></script>
+  <script src="/app/perfil/perfil.config.js"></script>
+  <script src="/app/perfil/perfil.ctrl.js"></script>
+  <script src="/app/perfil/meusdados.ctrl.js"></script>
+  <script src="/app/perfil/afiliados.ctrl.js"></script>
+  <script src="/app/perfil/pay.ctrl.js"></script>
+  <script src="/app/admin/admin.ctrl.js"></script>
+  <script src="/app/admin/AdminLogin.ctrl.js"></script>
+  <script src="/app/admin/AdminUser.ctrl.js"></script>
+  <script src="/app/admin/AdminPending.ctrl.js"></script>
+  <script src="/app/admin/AdminPendingRecharge.ctrl.js"></script>
+  <script src="/app/admin/admin.config.js"></script>
+</body>
+</html>

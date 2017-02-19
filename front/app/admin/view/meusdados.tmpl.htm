@@ -1,0 +1,57 @@
+<form name="formCadastro" novalidate
+  method="post"
+  class="container form-horizontal"
+  data-ng-submit="ctrl.submit(ctrl.data)">
+
+  <h3>Meus dados</h3>
+
+  <p>
+    ID: {{ ctrl.data.id }}
+  </p>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+    name="name"
+    class="form-control"
+    placeholder="* Nome"
+    required
+    data-ng-model="ctrl.data.name">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="username"
+      class="form-control"
+      placeholder="* Nome de usuario"
+      required
+      data-ng-model="ctrl.data.username">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password"
+      name="password"
+      class="form-control"
+      placeholder="Senha"
+      data-ng-model="ctrl.data.password">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password"
+      class="form-control"
+      name="repeatPassword"
+      placeholder="Repetir Senha"
+      data-ng-model="ctrl.data.repeatPassword">
+  </div>
+
+  <hr>
+  <div class="row text-center">
+    <button type="submit"
+      class="btn btn-primary"
+      data-ng-disabled="!formCadastro.$valid || (ctrl.data.password !== ctrl.data.repeatPassword)"
+      >Cadastrar</button>
+  </div>
+</form>

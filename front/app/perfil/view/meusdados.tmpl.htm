@@ -1,0 +1,250 @@
+<form name="formCadastro" novalidate
+  method="post"
+  class="container form-horizontal"
+  data-ng-submit="ctrl.submit(ctrl.data)">
+
+  <h3>Meus dados</h3>
+
+  <p ng-if="ctrl.data.confirmed == 1" class="text-color_white">
+    Link para reclutar: <strong>{{ ctrl.hostname }}</strong>
+  </p>
+  <p ng-if="!ctrl.data.confirmed || ctrl.data.confirmed == 0">
+    <strong class="text-color_white">
+      ID para reclutar afiliados sera liberado apenas depois da confirmação de pagamento.
+    </strong>
+  </p>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="email"
+      class="form-control"
+      placeholder="* Email/Nome de Usuário"
+      required
+      data-ng-model="ctrl.data.email">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="name"
+      class="form-control"
+      placeholder="* Nome"
+      required
+      data-ng-model="ctrl.data.name">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+    <div class="input-group">
+      <span class="input-group-addon">* Operadora</span>
+      <select name="operadora"
+      class="form-control"
+      placeholder="* Operadora"
+      required
+      data-ng-model="ctrl.data.operadora">
+        <option value="Claro">Claro</option>
+        <option value="Oi">Oi</option>
+        <option value="Tim">Tim</option>
+        <option value="Vivo">Vivo</option>
+      </select>
+    </div>
+    <input type="text"
+      name="celular"
+      class="form-control"
+      placeholder="* Celular"
+      required
+      data-ng-model="ctrl.data.celular">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="cpfcnpj"
+      class="form-control"
+      placeholder="* CPF/CNPJ"
+      required
+      data-ng-model="ctrl.data.cpfcnpj">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="rg"
+      class="form-control"
+      placeholder="RG"
+      data-ng-model="ctrl.data.rg">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="dtnasc"
+      class="form-control"
+      placeholder="Data de Nacimento"
+      data-ng-model="ctrl.data.dtnasc">
+  </div>
+
+  <div class="input-group background_white">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> Sexo:</span>
+
+    <label class="radio-inline">
+    <input type="radio"
+      name="sexo"
+      class=""
+      value="F"
+      data-ng-model="ctrl.data.sexo"> Feminino
+    </label>
+
+    <label class="radio-inline">
+    <input type="radio"
+      name="sexo"
+      class=""
+      value="M"
+      data-ng-model="ctrl.data.sexo"> Masculino
+    </label>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="estadoCivil"
+      class="form-control"
+      placeholder="Estado Civil"
+      data-ng-model="ctrl.data.estadoCivil">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="nDependente"
+      class="form-control"
+      placeholder="Nº Dependentes"
+      data-ng-model="ctrl.data.nDependente">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+    <input type="text"
+      name="endereco"
+      class="form-control"
+      placeholder="Endereço"
+      data-ng-model="ctrl.data.endereco">
+
+    <input type="text"
+      name="numero"
+      class="form-control"
+      placeholder="Nº"
+      data-ng-model="ctrl.data.numero">
+
+    <input type="text"
+      name="bairro"
+      class="form-control"
+      placeholder="Bairro"
+      data-ng-model="ctrl.data.bairro">
+
+    <input type="text"
+      name="complemento"
+      class="form-control"
+      placeholder="Complemento"
+      data-ng-model="ctrl.data.complemento">
+
+    <input type="text"
+      name="cidade"
+      class="form-control"
+      placeholder="Cidade"
+      data-ng-model="ctrl.data.cidade">
+
+    <input type="text"
+      name="cep"
+      class="form-control"
+      placeholder="CEP"
+      data-ng-model="ctrl.data.cep">
+
+    <input type="text"
+      name="uf"
+      class="form-control"
+      placeholder="UF"
+      data-ng-model="ctrl.data.uf">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+
+    <input type="text"
+      name="banco"
+      class="form-control"
+      placeholder="Banco"
+      data-ng-model="ctrl.data.banco">
+
+    <input type="text"
+      name="agencia"
+      class="form-control"
+      placeholder="Agencia"
+      data-ng-model="ctrl.data.agencia">
+
+    <div class="input-group background_white">
+      <span class="input-group-addon">Tipo de conta:</span>
+
+
+      <label class="radio-inline">
+      <input type="radio"
+        name="tipoConta"
+        class=""
+        value="1"
+        data-ng-model="ctrl.data.tipoConta"> Corrente
+      </label>
+
+      <label class="radio-inline">
+      <input type="radio"
+        name="tipoConta"
+        class=""
+        value="2"
+        data-ng-model="ctrl.data.tipoConta"> Poupança
+      </label>
+    </div>
+
+    <input type="text"
+      name="nConta"
+      class="form-control"
+      placeholder="Nº da Conta"
+      data-ng-model="ctrl.data.nConta">
+
+    <input type="text"
+      name="digito"
+      class="form-control"
+      placeholder="Digito"
+      data-ng-model="ctrl.data.digito">
+
+    <input type="text"
+      name="operacao"
+      class="form-control"
+      placeholder="Operação"
+      data-ng-model="ctrl.data.operacao">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i>Trocar senha de usuário:</span>
+
+    <input type="password"
+      name="password"
+      class="form-control"
+      placeholder="Senha"
+      data-ng-model="ctrl.data.password">
+
+    <input type="password"
+      class="form-control"
+      name="repeatPassword"
+      placeholder="Repetir Senha"
+      data-ng-model="ctrl.data.repeatPassword">
+  </div>
+
+  <hr>
+  <div class="row text-center">
+    <button type="submit"
+      class="btn btn-primary"
+      data-ng-disabled="!formCadastro.$valid || (ctrl.data.password !== ctrl.data.repeatPassword)"
+      >Cadastrar</button>
+  </div>
+</form>

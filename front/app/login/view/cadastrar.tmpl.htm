@@ -1,0 +1,68 @@
+<form name="formCadastro" novalidate
+  method="post"
+  class="container form-horizontal"
+  data-ng-submit="ctrl.submit(ctrl.data)">
+
+  <h3>Cadastra-se</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="affiliate"
+      class="form-control"
+      placeholder="ID de quem te indicou se houver"
+      title="ID de quem te indicou se houver"
+      maxlength="23"
+      ng-readonly="{{ctrl.form.affiliate.readonly}}"
+      data-ng-model="ctrl.data.affiliate">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="email"
+      class="form-control"
+      placeholder="* Email/Nome Usuario"
+      title="* Email/Nome de Usuário"
+      required
+      data-ng-model="ctrl.data.email">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      name="name"
+      class="form-control"
+      placeholder="* Nome"
+      title="* Nome"
+      required
+      data-ng-model="ctrl.data.name">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password"
+      name="password"
+      class="form-control"
+      placeholder="* Senha"
+      title="* Senha"
+      required
+      data-ng-model="ctrl.data.password">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password"
+      class="form-control"
+      name="repeatPassword"
+      placeholder="* Repetir Senha"
+      title="* Repetir Senha"
+      required
+      data-ng-model="ctrl.data.repeatPassword">
+  </div>
+
+  <hr>
+  <div class="row text-center">
+    <button type="submit" class="btn btn-primary" data-ng-disabled="!formCadastro.$valid || (ctrl.data.password !== ctrl.data.repeatPassword)">Cadastrar</button>
+  </div>
+</form>

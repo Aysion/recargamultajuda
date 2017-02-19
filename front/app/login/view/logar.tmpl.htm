@@ -1,0 +1,34 @@
+<form name="formCadastro"
+  class="container"
+  method="post"
+  data-ng-submit="ctrl.logar(ctrl.data)">
+  <h3>Entrar em sua conta</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text"
+      class="form-control"
+      name="email"
+      placeholder="Email/Nome de Usuário"
+      required
+      data-ng-model="ctrl.data.email">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password"
+      class="form-control"
+      name="password"
+      placeholder="Senha"
+      required
+      data-ng-model="ctrl.data.password">
+  </div>
+
+  <hr>
+  <div class="row text-center">
+    <input type="submit"
+      class="btn btn-success"
+      value="Logar"
+      data-ng-disabled="!formCadastro.$valid">
+  </div>
+</form>
